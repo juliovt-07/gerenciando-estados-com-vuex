@@ -7,16 +7,16 @@
 </template>
 
 <script>
-import { mapState, mapMutations } from 'vuex'
+import { mapGetters, mapActions } from 'vuex'
 export default {
     name: 'Counter',
     computed: {
-        ...mapState ({
-            counter: state => state.counter
-        })
+        ...mapGetters ([
+            'counter'
+        ])
     },
     methods: {
-        ...mapMutations([
+        ...mapActions([
             'decrement',
             'increment'
         ])
